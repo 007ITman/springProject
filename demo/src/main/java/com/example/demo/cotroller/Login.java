@@ -39,9 +39,5 @@ public class Login {
         modelAndView.setViewName("login");
         modelAndView.addObject("loginName", 12345);
         return modelAndView;
-
-
     }
-
-
 }
