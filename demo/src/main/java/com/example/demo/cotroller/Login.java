@@ -31,7 +31,7 @@ public class Login {
     @RequestMapping(value = "/admit", method = RequestMethod.POST)
     public ModelAndView login(@ModelAttribute LoginDto loginDto) {
 
-    	// 
+    	// 登録データが確認
         if ("zd123".equals(loginDto.getLoginName()) && "password".equals(loginDto.getLoginPassword())) {
 
         }
