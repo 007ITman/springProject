@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
  * */
 @Controller
 @RequestMapping(value = "/test")
-public class Login {
+public class LoginCotroller {
 	
 	@Autowired
 	LoginService loginService;

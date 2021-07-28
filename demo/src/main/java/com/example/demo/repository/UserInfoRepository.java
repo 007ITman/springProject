@@ -3,9 +3,9 @@ package com.example.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.dao.LoginUserInfo;
+import com.example.demo.dao.LoginUserInfoDao;
 
 @Repository
-public interface UserInfoRepository extends JpaRepository<LoginUserInfo, Long>{
+public interface UserInfoRepository extends JpaRepository<LoginUserInfoDao, Long>{
 
 }

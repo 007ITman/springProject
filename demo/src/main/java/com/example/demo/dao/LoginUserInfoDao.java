@@ -12,7 +12,7 @@ import javax.persistence.Table;
 //加盐加密算法追加后，需要重新做一个表，这个DTO也需要重新生成
 @Entity
 @Table(name="LOGINUSERINFO")
-public class LoginUserInfo {
+public class LoginUserInfoDao {
 
 	@Id
 	@Column(name="USERID")

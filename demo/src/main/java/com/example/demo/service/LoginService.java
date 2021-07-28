@@ -3,7 +3,7 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.dao.LoginUserInfo;
+import com.example.demo.dao.LoginUserInfoDao;
 import com.example.demo.dto.LoginDto;
 import com.example.demo.repository.UserInfoRepository;
 import com.example.demo.utils.ZDUtils;
@@ -20,7 +20,7 @@ public class LoginService {
 	// 登録データをデータベースに挿入することs
 	public boolean APInsert(LoginDto loginDto) {
 		
-		LoginUserInfo userInfo = new LoginUserInfo();
+		LoginUserInfoDao userInfo = new LoginUserInfoDao();
 		// ユーザアカウント
 		userInfo.setUserName(loginDto.getLoginName());
 		// パスワード
