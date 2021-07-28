@@ -13,6 +13,7 @@ public class DemoApplication extends SpringBootServletInitializer {
         return application.sources(DemoApplication.class);
     }
 
+    // 項目の初め
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }

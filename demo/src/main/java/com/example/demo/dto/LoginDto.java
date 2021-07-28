@@ -1,29 +1,42 @@
 package com.example.demo.dto;
 
-
 import java.io.Serializable;
 
 public class LoginDto implements Serializable {
 
-    public String getLoginName() {
-        return loginName;
-    }
+	private static final long serialVersionUID = 1L;
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
+	/** ユーザアカウント */
+	private String loginName;
 
-    public String getLoginPassword() {
-        return loginPassword;
-    }
+	/** パスワード */
+	private String loginPassword;
 
-    public void setLoginPassword(String loginPassword) {
-        this.loginPassword = loginPassword;
-    }
+	/** 結果メッセージ */
+	private String resultMessage;
 
-    private String loginName;
+	public String getLoginName() {
+		return loginName;
+	}
 
-    private String loginPassword;
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+	}
 
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public String getResultMessage() {
+		return resultMessage;
+	}
+
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
+	}
 
 }
