@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -21,6 +23,8 @@ public class LoginService {
 	public boolean APInsert(LoginDto loginDto) {
 		
 		LoginUserInfoDao userInfo = new LoginUserInfoDao();
+		Random random = new Random();
+		userInfo.setUserID(String.valueOf(random.nextInt(200-100+1)+100));
 		// ユーザアカウント
 		userInfo.setUserName(loginDto.getLoginName());
 		// パスワード

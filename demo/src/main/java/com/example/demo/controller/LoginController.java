@@ -1,8 +1,11 @@
-package com.example.demo.cotroller;
+package com.example.demo.controller;
 
 import com.example.demo.constant.ZDConstants;
 import com.example.demo.dto.LoginDto;
 import com.example.demo.service.LoginService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
  * */
 @Controller
 @RequestMapping(value = "/test")
-public class LoginCotroller {
+public class LoginController {
+	
+	private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
 	LoginService loginService;
@@ -31,7 +36,8 @@ public class LoginCotroller {
      * */
     public String confirm(@Validated @ModelAttribute LoginDto form, BindingResult result, Model model) {
     	// 登録画面へ遷移
-        return "login";
+    	log.info("画面初期化");
+        return "html/login";
     }
 
     @RequestMapping(value = "/admit", method = RequestMethod.POST)
@@ -43,13 +49,15 @@ public class LoginCotroller {
 
         	loginService.APInsert(loginDto);
         	modelAndView.addObject("loginDto", loginDto);
-            modelAndView.setViewName("loginSuccess");
+            modelAndView.setViewName("html/loginSuccess");
+            log.info("登録成功");
             return modelAndView;
         }
         LoginDto loginDtoL = new LoginDto();
         loginDtoL.setResultMessage(ZDConstants.LOGIN_RESULT_MESSAGE);
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("html/login");
         modelAndView.addObject("loginDto", loginDtoL);
+        log.info("登録失敗");
         return modelAndView;
     }
 }

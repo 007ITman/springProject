@@ -17,7 +17,7 @@ public class LoginUserInfoDao {
 	@Id
 	@Column(name="USERID")
 	//声明自增已经自增策略
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public String userID;
 
 	@Column(name="USERNAME")
